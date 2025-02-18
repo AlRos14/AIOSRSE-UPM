@@ -19,22 +19,22 @@ def main():
     logging.info("Initializing analysis...")
 
     # Paso 1: Process PDFs
-    papers = process_papers("data/") 
+    papers = process_papers("IndividualAssessment/data/") 
 
     # Paso 2: Extract abstract keywords
     keyword_data = extract_abstract_keywords(papers)
 
     # Paso 3: Generate keyword cloud
-    generate_keyword_cloud(keyword_data, "output/keyword_cloud.png")
+    generate_keyword_cloud(keyword_data, "IndividualAssessment/output/keyword_cloud.png")
 
     # Paso 4: Count figures per article
-    plot_figures_per_article(papers, "output/figures_per_article.png")
+    plot_figures_per_article(papers, "IndividualAssessment/output/figures_per_article.png")
 
     # Paso 5: Extract links
     links = extract_links(papers)
     
     # Save links to file
-    with open("output/links.txt", "w") as f:
+    with open("IndividualAssessment/output/links.txt", "w") as f:
         for paper, link_list in links.items():
             f.write(f"{paper}:\n")
             for link in link_list:

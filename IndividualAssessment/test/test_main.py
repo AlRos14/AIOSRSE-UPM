@@ -3,7 +3,6 @@ import os
 import random
 import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 from src.grobid_client import process_papers
 from src.link_extractor import extract_links
 from src.visualization import figures_per_article
@@ -13,7 +12,7 @@ class TestMain(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # Setup code to run once before all tests
-        cls.pdf_folder = "IndividualAssessment/data/"
+        cls.pdf_folder = "data/"
         
         if not os.path.exists(cls.pdf_folder):
             raise unittest.SkipTest(f"The folder {cls.pdf_folder} does not exist.")

@@ -8,6 +8,10 @@ Additionally, Python dependencies must be installed from the requirements.txt fi
 Before running, PDFs should be placed in the data folder inside IndividualAssessment.
 
 ## Running the Project
+If you are not in IndividualAssesment folder:
+```bash
+    cd IndividualAssessment
+```
 To run the project, use the following command:
 ```bash
 python main.py

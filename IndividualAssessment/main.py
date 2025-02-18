@@ -1,3 +1,4 @@
+import argparse
 import logging
 from src.grobid_client import process_papers
 from src.text_processing import extract_abstract_keywords
@@ -8,6 +9,13 @@ from src.link_extractor import extract_links
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 def main():
+    parser = argparse.ArgumentParser(
+        description='Process PDF papers and generate visualizations.\n' +
+        'Este script procesa los archivos PDF en la carpeta data/ y genera visualizaciones en la carpeta output/'
+    )
+    parser.parse_args()
+
+    
     logging.info("Iniciando el análisis de artículos...")
 
     # Paso 1: Process PDFs
@@ -36,3 +44,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

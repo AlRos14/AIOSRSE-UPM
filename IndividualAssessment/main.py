@@ -11,12 +11,12 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 def main():
     parser = argparse.ArgumentParser(
         description='Process PDF papers and generate visualizations.\n' +
-        'Este script procesa los archivos PDF en la carpeta data/ y genera visualizaciones en la carpeta output/'
+        'This script processes PDF papers in the data/ folder, extracts information, and generates visualizations in the output/ folder.'
     )
     parser.parse_args()
 
     
-    logging.info("Iniciando el análisis de artículos...")
+    logging.info("Initializing analysis...")
 
     # Paso 1: Process PDFs
     papers = process_papers("data/") 
@@ -40,7 +40,7 @@ def main():
             for link in link_list:
                 f.write(f"  - {link}\n")
 
-    logging.info("Análisis completado. Resultados guardados en la carpeta output/")
+    logging.info("Analysis complete. Results saved in the output/ folder.")
 
 if __name__ == "__main__":
     main()

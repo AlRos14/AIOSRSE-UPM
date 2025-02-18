@@ -2,5 +2,5 @@
 
 This is the documentation of the project.
 
-## Instalación
+## Installation
 Check the [installation](install.md) section.

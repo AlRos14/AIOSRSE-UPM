@@ -1,7 +1,7 @@
 site_name: Individual Assessment AIOSRSE
 nav:
   - Home: index.md
-  - Instalación: install.md
-  - Uso: usage.md
+  - Installation: install.md
+  - Usage: usage.md
 theme:
   name: readthedocs

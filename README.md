@@ -4,51 +4,97 @@
 ## Description
 This repository contains deliverables related to Artificial Intelligence and Open Science in Research Software Engineering. Currently, it only contains IndividualAssessment, which is a Grobid client that extracts links, generates a word cloud from abstracts, and creates a figure-per-article graph from PDF papers.
 
-## Requirements
-This project has a dependency file named requirements.txt, located inside the docs folder. To install the dependencies, run:
-
-    pip install -r requirements.txt
-
-## Installation
-1. Clone the repository:
-```bash
-   git clone https://github.com/AlRos14/AIOSRSE-UPM.git
-   cd IndividualAssesment
+## Repository Structure
+```
+AIOSRSE-UPM/
+├── IndividualAssessment/  # Main project folder
+│   ├── data/              # Place your PDF files here
+│   ├── main.py            # Main execution script
+│   └── ...
+└── docs/
+    └── requirements.txt   # Dependencies file
 ```
 
-2. Create and activate a virtual environment (optional but recommended):
+## Requirements
+- Python 3.9.13 or higher
+- A running Grobid service (default: http://localhost:8070)
+- Dependencies listed in docs/requirements.txt
+
+## Installation
+Clone the repository:
+```bash
+   git clone https://github.com/AlRos14/AIOSRSE-UPM.git
+   cd IndividualAssessment
+```
+
+### Local Installation
+Follow these instructions if you want to run the project with a Grobid instance on your local machine.
+
+Create and activate a virtual environment (optional but recommended):
 ```bash
     python3 -m venv env
     source env/bin/activate  # On Windows: env\Scripts\activate
 ```
 
-3. Install the required dependencies:
+Install the required dependencies:
 ```bash
-    pip install -r requirements.txt
+    pip install -r docs/requirements.txt
 ```
 
-4. Verify the installation:
+Verify the installation:
 ```bash
     python main.py --help
 ```
 
+### Docker Installation
+Follow these instructions if you prefer using Docker without worrying about dependencies or Grobid setup.
+
+Build docker containers with Docker-Compose
+```bash
+    docker-compose up --build
+```
+This will automatically:
+- Set up a Grobid instance
+- Install all required dependencies
+- Configure the project to work with the containerized Grobid
+
 ## Execution
 
-### Requirements
+### Local Execution
+
+#### Requirements
 It is mandatory to have a running Grobid instance, as this project is essentially a Grobid client.
 Additionally, Python dependencies must be installed from the requirements.txt file.
 
-### Before running the project
-Before running, PDFs should be placed in the data folder inside IndividualAssessment.
+#### Before running the project
+1. Ensure a Grobid instance is running (by default at http://localhost:8070)
+2. Place your PDF files in the `IndividualAssessment/data` folder
 
-### Running the Project
+#### Running the Project
 To run the project, use the following command:
 ```bash
 python main.py
 ```
 
+### Docker Execution
+
+#### Running the Project
+If you've already built the containers, simply run:
+```bash
+docker-compose up
+```
+#### Stopping the Project
+The Docker containers will run in the background until you stop them:
+```bash
+# Press CTRL+C in the terminal where docker-compose is running
+docker-compose down
+```
+
 ### After running the project
-An output folder will be created, containing three files: figures_per_article.png, keyword_cloud.png and link.txt
+After execution, an `output` folder will be created inside the IndividualAssessment directory, containing three files:
+- `figures_per_article.png`: A graph showing the number of figures per article
+- `keyword_cloud.png`: A word cloud generated from the abstracts
+- `links.txt`: A list of links extracted from the papers
 
 ## Running Example(s)
 This is a running example using ten AI-related articles:

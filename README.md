@@ -1,5 +1,5 @@
 # AIOSRSE-UPM
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14889324.svg)](https://doi.org/10.5281/zenodo.14889324)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14957145.svg)](https://doi.org/10.5281/zenodo.14957145)
 
 ## Description
 This repository contains deliverables related to Artificial Intelligence and Open Science in Research Software Engineering. Currently, it only contains IndividualAssessment, which is a Grobid client that extracts links, generates a word cloud from abstracts, and creates a figure-per-article graph from PDF papers.
